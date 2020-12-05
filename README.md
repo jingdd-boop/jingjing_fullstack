@@ -1,10 +1,15 @@
-# 京喜一下，只为BATJTMD
+# 需要整理的
 
-## 前端是代码的导演
-  - HTML5
-  - CSS
-  - JS
-## 后端
-  -Node 阿里中台
-  -Go 后台 API
-  -Mysql/Mongodb/TiDB/ 大数据的处理
+# HTML
+## HTML5
+- 语义化 2020-11-21
+# CSS
+- 动画 2020-11-17
+# JAVASCRIPT
+- 对象 2020-11-19
+- 数组方法 forEach(),filter()
+- Map内置对象
+# LeetCode
+- 1.两数之和
+# 框架
+

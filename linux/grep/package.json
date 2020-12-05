@@ -1,0 +1,12 @@
+{
+  "name": "grep",
+  "version": "1.0.0",
+  "description": "- gitbash 是一个linux 最小化战场\r - grep 命令 用于查找\r   grep moon monkey\r   在monkey里找moon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

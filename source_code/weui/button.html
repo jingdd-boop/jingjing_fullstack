@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>源码分析之weui</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* weui-botton 组件样式 */
+    .weui-btn {
+      display: block;
+      width: 184px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 8px 24px;
+      font-weight: 700;
+      font-style: 17px;
+      text-align: center;
+      text-decoration: none;
+      color:#ffff;
+      line-height: 1.41176471;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .weui-btn-primary {
+      background-color: #7b9c5b;
+    }
+    .weui-btn-default {
+      background-color: rgb(216, 93, 93);
+      color: aqua;
+    }
+    .weui-btn-warn {
+      background-color: rgb(187, 96, 134);
+      color: rgb(10, 10, 34);
+    }
+  </style>
+</head>
+<body>
+    <div class="page_hd">
+      <h1 class="page__title">Button</h1>
+      <p>按钮</p>
+    </div>
+    <div class="page_bd">
+    <a href="javascript:;" class="weui-btn weui-btn-primary">按钮主要</a>
+    <a href="javascript:;" class="weui-btn weui-btn-default">按钮次要</a>
+    <a href="javascript:;" class="weui-btn weui-btn-warn">按钮警告</a>
+    <!-- <a href="javascript:;" class="weui-btn weui-btn_loading"></a>
+    <a href="javascript:;" class="weui-btn weui-btn_disabled"></a> -->
+    </div>
+</body>
+</html>

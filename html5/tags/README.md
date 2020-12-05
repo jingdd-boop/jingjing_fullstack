@@ -6,6 +6,8 @@
   - nav navigation 可以表示这个部分是导航
   1、语义化 ？ 百度 Google SEO(搜索引擎优化) 给蜘蛛 爬虫
   html5是天生对蜘蛛友好
+  html5语义化的标签页面结构
+  - header>nav + main>section + aside + footer
 
 <header>
   <!-- 导航 -->
