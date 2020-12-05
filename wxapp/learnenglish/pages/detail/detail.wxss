@@ -1,0 +1,23 @@
+/* pages/detail/detail.wxss */
+
+.wrapper .group {
+  padding: 0 36rpx -10rpx -36rpx;
+  /* 上右下左 */
+  /* 1rpx = 2px */
+  background: #fff;
+  margin-bottom: 16rpx;
+}
+
+.wrapper .group-bar {
+  height: 114rpx;
+  text-align: center;
+}
+.wrapper .group-title {
+  position: relative;
+  display: inline-block;
+  padding: 0 12rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 4rpx;
+  border: solid 1rpx #e0e0e3;
+}
