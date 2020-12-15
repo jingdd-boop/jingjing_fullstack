@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise</title>
+</head>
+<body>
+    <script>
+      //promise 许诺
+      // console.log(2);
+      //console.log(2);
+      //如何让它先输入2 再输出1
+      
+      //异步 I/O 内存中->硬盘
+      // setTimeout(() => {
+      //   console.log(1);
+      // },2000);
+      
+     const  p1 = new Promise((resolve,reject) => {
+        //费时 发送请求
+        //去一个土味情话网站，给我们反馈一条情话
+        // fetch("http://localhost:8080/user.json")
+        // .then(data => data.json())
+        // .then(data => {
+        //   // console.log(data);
+        //   resolve(data)
+        // })
+        // // setTimeout(() => {
+        // //   console.log(1);
+        // // },1000)
+        console.log(3);
+        resolve(1);
+      }) 
+      p1
+        .then((data) => {
+        console.log(data);
+      }) 
+      console.log(2) 
+    </script>
+</body>
+</html>
