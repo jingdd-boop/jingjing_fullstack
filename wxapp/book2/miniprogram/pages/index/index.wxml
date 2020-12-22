@@ -1,0 +1,9 @@
+<view class="" wx:for="{{phone_list}}" wx:for-item="phone">
+  <van-card
+    thumb= "{{phone.image}}"
+    title= "{{phone.title}}"
+    price= "{{phone.price}}"
+     >
+  </van-card>
+</view>
+<view>jingjing</view>
