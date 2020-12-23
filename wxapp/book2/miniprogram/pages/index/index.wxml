@@ -1,11 +1,14 @@
-<view wx:for="{{phone_list}}" wx:for-item="phone">
-  <image class="group-content-item-img" src="{{phone.image}}" />
-  
-  <van-card
-    thumb="{{phone.image}}"
-    price="{{phone.price}}"
-    title="{{phone.title}}"
-    
-   >
-  </van-card>
+<!-- block块状元素 在小程序里面不显示东西，负责承载我们的指令 -->
+<block wx:for="{{userList}}" wx:key="index">
+  <text>{{index}}</text>
+</block>
+
+<view class='floatBtn'>
+  <button 
+    size="mini" 
+    bindtap='navigatTo' 
+    type="primary"
+    open-type="getUserInfo"
+    bindgetuserinfo="getUserInfo"
+    >获取用户信息</button>
 </view>

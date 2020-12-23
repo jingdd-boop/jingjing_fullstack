@@ -14,13 +14,14 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/phoneDetail/phoneDetail",
-    "pages/zhvant/zhvant"
+    "pages/zhvant/zhvant",
+    "pages/add/add"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "婧婧的云开发",
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
@@ -31,4 +32,3 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
-

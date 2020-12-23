@@ -70,6 +70,13 @@
           "id": -1,
           "name": "vant",
           "pathName": "pages/zhvant/zhvant",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "add",
+          "pathName": "pages/add/add",
           "scene": null
         }
       ]
