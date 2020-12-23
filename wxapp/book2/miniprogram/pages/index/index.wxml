@@ -1,9 +1,11 @@
-<view class="" wx:for="{{phone_list}}" wx:for-item="phone">
+<view wx:for="{{phone_list}}" wx:for-item="phone">
+  <image class="group-content-item-img" src="{{phone.image}}" />
+  
   <van-card
-    thumb= "{{phone.image}}"
-    title= "{{phone.title}}"
-    price= "{{phone.price}}"
-     >
+    thumb="{{phone.image}}"
+    price="{{phone.price}}"
+    title="{{phone.title}}"
+    
+   >
   </van-card>
 </view>
-<view>jingjing</view>

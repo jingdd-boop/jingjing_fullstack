@@ -10,7 +10,7 @@ Page({
     db
     .collection("product")
     .get({
-      success: res =>{
+      success: res => {
         console.log(res);
         this.setData({
           phone_list:res.data

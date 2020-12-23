@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -14,8 +13,8 @@
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
     "pages/im/room/room",
-    "pages/phoneDetail/phoneDetail"
-    
+    "pages/phoneDetail/phoneDetail",
+    "pages/zhvant/zhvant"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -24,6 +23,12 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "usingComponents": {
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index"
+  },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .box {
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+    font-size: 0;
+    
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    display: flex;
+    
+  }
+  .col {
+    flex: 1;
+    /* width: 10%; */
+    height: 100%;
+    background-color: aqua;
+    /* float: left; */
+    display: inline-block;
+    font-size: 26px;
+  }
+  .col:nth-child(2n) {
+    background-color: brown;
+  }
+  </style>
+</head>
+<body>
+  <div class="box" >
+    <div class="col">jingjing</div>
+    <div class="col">11</div>
+    <div class="col">e</div>
+    <div class="col">r</div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</body>
+</html>
