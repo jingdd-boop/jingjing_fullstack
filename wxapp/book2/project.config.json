@@ -77,6 +77,13 @@
           "id": -1,
           "name": "add",
           "pathName": "pages/add/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "user",
+          "pathName": "pages/user/user",
           "scene": null
         }
       ]

@@ -1,1 +1,1 @@
-<van-button type="warning" bindtap="upLoad" size="large">点击上传</van-button>
+<van-button  type="primary" bindtap="upLoad" size="large">点击上传</van-button>

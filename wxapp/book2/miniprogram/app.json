@@ -15,7 +15,8 @@
     "pages/im/room/room",
     "pages/phoneDetail/phoneDetail",
     "pages/zhvant/zhvant",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/user/user"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
