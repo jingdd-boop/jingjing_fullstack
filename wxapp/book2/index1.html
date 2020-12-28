@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复习</title>
+</head>
+<body>
+  <img alt="" id="pic" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.ui.cn%2Fdata%2Ffile%2F7%2F2%2F9%2F1813927.gif&refer=http%3A%2F%2Fimg.ui.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611713539&t=99770d00cde1da607093a9add32a7018"/>
+  <script>
+    const strPic = 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.ui.cn%2Fdata%2Ffile%2F7%2F2%2F9%2F1813927.gif&refer=http%3A%2F%2Fimg.ui.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611713539&t=99770d00cde1da607093a9add32a7018';
+
+    const oPic = document.querySelector('#pic');//获取文档中 id="pic" 的元素：
+
+    const oImg = new Image();//new 一个Image实例oPic
+    oImg.src = strPic;
+
+    //当页面加载完将oPic的属性src设置成 strPic
+    oImg.onload = function() {
+      oPic.src = strPic;
+    }
+  </script>
+</body>
+</html>

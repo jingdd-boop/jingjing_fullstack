@@ -16,7 +16,10 @@
     "pages/phoneDetail/phoneDetail",
     "pages/zhvant/zhvant",
     "pages/add/add",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/mine/mine",
+    "pages/cart/cart",
+    "pages/vanuser/vanuser"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -30,6 +33,5 @@
     "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
     "van-goods-action-button": "@vant/weapp/goods-action-button/index"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }

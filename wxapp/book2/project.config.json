@@ -67,8 +67,8 @@
           "query": ""
         },
         {
-          "id": -1,
-          "name": "vant",
+          "id": 1,
+          "name": "pages/zhvant/zhvant",
           "pathName": "pages/zhvant/zhvant",
           "query": "",
           "scene": null
@@ -84,6 +84,27 @@
           "id": -1,
           "name": "user",
           "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "cart",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "vanuser",
+          "pathName": "pages/vanuser/vanuser",
           "scene": null
         }
       ]

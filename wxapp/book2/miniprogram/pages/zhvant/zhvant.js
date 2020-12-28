@@ -1,74 +1,64 @@
-// miniprogram/pages/zhvant/zhvant.js
-
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-   
+    goods: {
+      title: '荷兰进口Miffy米菲兔',
+      price: 2680,
+      formatPrice: '',
+      express: '免运费',
+      remain: 190,
+      thumb:
+        'https://gw.alicdn.com/bao/uploaded/i1/2206434878500/O1CN01FCltlM2Cf3896dIJ0_!!0-item_pic.jpg',
+    },
+    
+  },
+  onLoad() {
+    const { goods } = this.data;
+    const formatPrice = `¥${(goods.price / 100).toFixed(2)}`;
+    this.setData({
+      goods: {
+        ...goods,
+        formatPrice,
+      },
+    });
   },
 
-  onClickIcon() {
-    Toast('点击图标');
+  onClickCart() {
+    wx.navigateTo({
+      url: '/pages/cart/index',
+      success: () => {},
+      error: () => {
+        wx.showToast({
+          icon: 'none',
+          title: '打开购物车失败',
+        });
+      },
+    });
+  },
+
+  onClickUser() {
+    wx.navigateTo({
+      url: '/pages/user/index',
+      success: () => {},
+      error: () => {
+        wx.showToast({
+          icon: 'none',
+          title: '打开个人中心失败',
+        });
+      },
+    });
   },
 
   onClickButton() {
-    Toast('点击按钮');
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+    wx.showToast({
+      title: '暂无后续逻辑~',
+      icon: 'none',
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  sorry() {
+    wx.showToast({
+      title: '暂无后续逻辑~',
+      icon: 'none',
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

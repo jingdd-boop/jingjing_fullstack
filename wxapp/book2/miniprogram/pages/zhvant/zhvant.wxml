@@ -1,15 +1,58 @@
-<!--miniprogram/pages/zhvant/zhvant.wxml-->
-<van-button type="default">默认按钮</van-button>
-<van-button type="primary">主要按钮</van-button>
-<van-button type="info">信息按钮</van-button>
-<van-button type="warning">警告按钮</van-button>
-<van-button type="danger">危险按钮</van-button>
+<view>
+  <view>
+    <van-image
+      height="414"
+      width="100%"
+      src="{{ goods.thumb }}"
+    />
+  </view>
+  <van-cell-group border="{{ false }}">
+    <van-cell
+      custom-class="goods-message"
+      title="{{ goods.title }}"
+      label="{{ goods.formatPrice }}"
+    />
+    <van-cell custom-class="goods-express" border="{{ false }}">
+      <van-col span="10">运费：{{ goods.express }}</van-col>
+      <van-col span="14">剩余：{{ goods.remain }}</van-col>
+    </van-cell>
+  </van-cell-group>
 
+  <van-cell-group custom-class="goods-cell-group">
+    <van-cell value="进入店铺" icon="shop-o" is-link bind:click="sorry">
+      <view slot="title">
+        <span class="van-cell-text">婧婧的店</span>
+        <van-tag class="goods-tag" type="danger">官方</van-tag>
+      </view>
+    </van-cell>
+    <van-cell title="线下门店" icon="location-o" is-link bind:click="sorry" />
+  </van-cell-group>
 
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" dot />
-  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" />
-  <van-goods-action-button text="加入购物车" type="warning" />
-  <van-goods-action-button text="立即购买" />
+ 
+ 
+
+  <van-goods-action>
+    <van-goods-action-icon
+      icon="chat-o"
+      text="我的"
+      bind:click="onClickUser"
+    />
+    <van-goods-action-icon
+      icon="cart-o"
+      text="购物车"
+      bind:click="onClickCart"
+    />
+    <van-goods-action-button
+      text="加入购物车"
+      type="warning"
+      color="#be99ff"
+      bind:click="onClickButton"
+    />
+    <van-goods-action-button
+      text="立即购买"
+      color="#7232dd"
+      bind:click="onClickButton"
+    />
 </van-goods-action>
+</view>
+

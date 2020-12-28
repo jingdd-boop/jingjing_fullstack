@@ -1,0 +1,26 @@
+/* miniprogram/pages/mine/mine.wxss */
+.user-poster {
+  width: 100%;
+  height: 53vw;
+}
+
+/* vant之外  要写一些业务样式*/
+.user-links {
+  padding: 15px 0;
+  font-size: 12px;
+  text-align: center;
+  background-color: rgb(255, 5, 5);
+}
+
+.user-links,van-icon {
+  display: block;
+  font-size: 24px;
+}
+.user-links {
+  padding: 25px 0;
+}
+
+.user-group{
+  display: block;
+  margin-bottom: 50rpx;
+}
