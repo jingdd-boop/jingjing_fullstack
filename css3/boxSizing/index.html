@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子模型</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .row {
+    height: 200px;
+    background-color: #00ffff;
+  }
+  .col {
+    display: inline-block;
+    width: 50%;
+    height: 100px;
+    box-sizing: border-box;
+    /* 直接设置内容 */
+    /* border padding content */
+    background-color:rgb(206, 209, 41);
+    padding: 0 10px;
+  }
+  .col:last-child {
+    background-color:red;
+  }
+</style>
+<body>
+  <div class="row">
+    <div class="col"></div><div class="col"></div>
+  </div>
+</body>
+</html>
