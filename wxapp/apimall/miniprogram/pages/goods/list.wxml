@@ -1,0 +1,36 @@
+<!-- van 列表组件  -->
+<van-sticky>
+  <view class="header">
+    <view class="search">
+      <input type="text" placeholder="输入搜索关键词" value="{{name}}" bindinput="bindinput" bindconfirm="bindconfirm"></input>
+      <image src="/images/search.svg" bindtap="search"></image>
+    </view>
+    <image class="show-type" src="/images/list{{listType}}.svg" bindtap="changeShowType"></image>
+  </view>
+</van-sticky>
+
+<view class="filters">
+  <!-- 默认的时候，如果没有选择那么显示它被点击，如果点了其他的就不显示样式 -->
+  <view class="item {{orderBy=='' ? 'active' : ''}}" data-val="" bindtap="filter">综合</view>
+  <view class="item {{orderBy=='addedDown' ? 'active' : ''}}" data-val="addedDown" bindtap="">新品</view>
+  <view class="item {{orderBy=='ordersDown' ? 'active' : ''}}" data-val="ordersDown" bindtap="">销量</view>
+  <view class="item {{orderBy=='priceUp' ? 'active' : ''}}" data-val="priceUp" bindtap="filter">价格</view>
+</view>
+
+<block >
+  <view class="list1" wx:for="{{goods}}" wx:key="id">
+    <navigator url="/pages/goods-details/index?id={{item.id}}"><image class="img" mode="aspectFill" src="{{item.pic}}"></image></navigator>
+    <view class="goods-info">
+      <view class="title ellipsis"><navigator url="/pages/goods-details/index?id={{item.id}}">{{item.name}}</navigator></view>
+      <view class="price">¥ {{item.minPrice}}</view>
+      <view class="buy-info">
+        <view class="num">已售出{{item.numberSells}}件</view>
+        <image class="car" src="/images/icon/car.svg" data-id="{{item.id}}" bindtap="addShopCar"></image>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+
+
