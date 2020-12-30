@@ -1,0 +1,6 @@
+<wxs module='theming' src='../../filter/theming.wxs'/>
+
+
+<view class='page {{ theme }}'>
+  <image mode='aspectFit' class='avatar' src='{{ theming.iconFolder(theme) }}/octoface.svg'></image>
+</view>
