@@ -44,9 +44,25 @@ var oddEvenList = function(head) {
 
     odd = oddNext;
     even = evenNext;
-    
+
+    //1->2->3->4->5
+    //哨兵节点：奇数哨兵节点的next:head,偶数哨兵节点的next:head.next;
+    //奇数节点：dummyHead1.next; -1
+    //偶数节点：dummyHead2.next; -2
+
+    //当奇数节点（或下一个节点），偶数节点（或下一个节点）存在时
+    //把奇数节点的下一个奇数节点用oddNext保存起来；
+    //const oddNext = odd.next.next;
+    //把偶数节点的下一个偶数节点用evenNext保存起来；
+    //const evenNext = even.next.next;
+
+    //再分别把这两个值分别连接到前面的奇偶节点上去；
+
+    //同时继续往下遍历
+    //也就是让奇偶节点分别移向它对应下一个奇偶节点，直到遍历完成 
   }
-  //凭借奇偶链表
+  //拼接奇偶链表
+
   odd.next = dummyHead2.next;
   return dummyHead1.next;
 }

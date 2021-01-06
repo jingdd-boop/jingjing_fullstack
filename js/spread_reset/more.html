@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="people">
+    <p>wes</p>
+    <p>kait</p>
+    <p>Randy</p>
+  </div>
+  <script>
+    //返回的不是一个真正的数组，它是一个伪数组
+    //JS一切皆对象，
+    const people = Array.from(document.querySelectorAll('.people p'));
+    //console.log(people)
+    // const arr = [];
+    // people.forEach(person => {
+    //   arr.push(person)
+    // })
+
+    //map
+    const names = people.map(person => person.textContent)
+    console.log(names)
+    const deepDish = {
+      pizzaName: 'Deep Dish',
+      size: 'Medium',
+      ingredients:['Marinara','jingjing','asdf','wang']
+    }
+    const shoppigList = ['Milk','JING',...deepDish.ingredients]
+    console.log(shoppigList)
+    const name = ['wes','Bos'];
+    function sayHi(first,last) {
+      alert(`HEY  ${first} ${last}`);
+        }
+
+    //reset
+    //sayHi(name[0],name[1],name[2])
+    sayHi(...name);
+
+  </script>
+</body>
+</html>

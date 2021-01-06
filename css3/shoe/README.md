@@ -19,6 +19,7 @@ container
 
 
 stylus编译：
+stylus eleme.styl
 stylus -w card.styl -o card.css
 
 - 良好的结构
