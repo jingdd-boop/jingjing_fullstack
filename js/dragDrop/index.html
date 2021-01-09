@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .src {
+      display: flex;
+    }
+    .dragable {
+      flex:1;
+    }
+    .txt {
+      color:green;
+    }
+    #target {
+      width: 800px;
+      height: 200px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid gray;
+      color: red;
+    }
+    p {
+      cursor: pointer;
+    }
+    .ds {
+      background-color: rgba(0,0,0,0.1);
+    }
+    #target.hover {
+      border: 3px dashed green;
+    }
+  </style>
+</head>
+<body>
+  <!-- source -->
+  <div class="src">
+    <div class="dragable">
+      <div class="txt" id="txt">
+        所以文章都可以拖拽
+        <p draggable="true">此段文字设置了属性draggable="true"</p>
+      </div>
+    </div>
+
+    <div id="target">Drop here</div>
+  </div>
+  <!-- des drop-->
+  <script>
+    let dragSrc = document.getElementById('txt');
+    let target  = document.getElementById('target');
+    //事件 刚开始拖拽
+    //红宝书 addEventListener 有什么区别 on+事件
+    dragSrc.ondragstart = handle_start;
+    dragSrc.ondrag = handle_drag;
+    dragSrc.ondragend = handle_end;
+    //drop 添加了监听事件
+    target.ondragenter = handle_enter;
+    target.ondragover = handle_over;
+    target.ondragleave = handle_leave;
+    target.ondrop = handle_drop;
+
+    function handle_drop(event) {
+      //浏览的默认行为，你把一个东西拖到一个区域里面，它会认为你是想显示它
+      //浏览器默认行为：默认的拖放文件是用相应的解析
+      //显示目的元素 
+      //image/png text/html
+      //阻止默认行为
+      event.preventDefault();
+      target.appendChild(dragSrc);
+      console.log('当前元素在目的地放下时触发')
+    }
+    function handle_enter() {
+      console.log('handle_enter 当元素进入目的地时触发')
+      target.classList.add('hover');
+    }
+    function handle_over() {
+      event.preventDefault();
+      console.log('over');
+    }
+    function handle_leave() {
+      target.classList.remove('hover');
+      console.log('handle_leave 当离开目的地时触发')
+    }
+
+    function handle_start(e) {
+      //console.log('------')
+      //console.log(dragSrc.classList)
+      //细分 drag start 事件
+      //被按 css 去做
+      dragSrc.classList.add('ds')
+    }
+    function handle_drag() {
+      console.log('拖中')
+      dragSrc.classList.remove('ds')
+    }
+    function handle_end() {
+      console.log('放手了')
+    }
+  </script>
+</body>
+</html>

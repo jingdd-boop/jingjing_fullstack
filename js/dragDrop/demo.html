@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main {
+      display: flex;
+      justify-content:space-around;
+    }
+    .left {
+      width: 300px;
+      height: 500px;
+      margin-right: 10px;
+      /* background-color: green; */
+    }
+    .right {
+      width: 300px;
+      height: 300px;
+      border: 1px solid lightseagreen;
+      /* background-color: red; */
+      
+    }
+    .txt {
+      border: 1px solid gray;
+      border: 1px solid lightseagreen;
+      margin: 1px;
+      width: 300px;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- html5 语议化标签 主体内容 -->
+  <main class="main">
+    <div class="left" id="left">
+      <div class="txt-show">左边区域</div>
+      <div class="dargable txt" id="txt1" draggable="true">可移动的文字一</div>
+      <div class="dargable txt" id="txt2" draggable="true">可移动的文字二</div>
+      <div class="dargable txt" id="txt3" draggable="true">可移动的文字三</div>
+      <div class="dargable txt" id="txt4" draggable="true">可移动的文字四</div>
+      <div class="dargable txt" id="txt5" draggable="true">可移动的文字五</div>
+    </div>
+    <div class="right" id="right">
+      <div class="txt-show">右边区域</div>
+    </div>
+  </main>
+  <script>
+    let txtObj = document.querySelectorAll('.txt');
+    //在此处五个元素 怎么设置它的时间
+    //不可以在伪数组元素上一次性注册 
+
+    // txtObj.forEach(txt => {
+    //  加入了一堆的事件
+    //   txt.addEventListener('dragstart', () => {
+    //     console.log('start');
+    //   })
+    // })
+    let left = document.getElementById('left')
+    let target = document.getElementById('right')
+
+    //左边监听事件
+    left.addEventListener('drop',(event) => {
+      console.log('拖回去')
+      event.preventDefault();
+      let target_id = event.dataTransfer.getData('textBack');
+      left.appendChild(document.getElementById(target_id))
+      console.log('拖回原地')
+    })
+
+    target.addEventListener('dragstart', () => {
+      const target = event.target;
+      event.dataTransfer.setData('textBack',target.id)
+      console.log('------------')
+      console.log(target)
+      console.log(target.id)
+    })
+    target.addEventListener('drag',(event) => {
+      console.log('drag');
+    })
+    target.addEventListener('dragend', (event) => {
+      console.log('dragend')
+    })
+    left.addEventListener('dragenter',(event) => {
+      console.log('dragenter')
+      event.preventDefault();
+    })
+    left.addEventListener('dragover',(event) => {
+      console.log('dragover')
+      event.preventDefault();
+    })
+    left.addEventListener('dragleave',(event) => {
+      console.log('dragleave')
+      event.preventDefault();
+    })
+
+    left.addEventListener('dragstart', () => {
+      const target = event.target;
+      //拖拽 dataTransfer 属性
+      event.dataTransfer.setData('Text',target.id)
+      console.log(target)
+      //console.log(target.id)
+      //事件冒泡
+      console.log('父元素上')
+    })
+    left.addEventListener('drag',(event) => {
+      console.log('drag');
+    })
+    left.addEventListener('dragend', (event) => {
+      console.log('dragend')
+    })
+    target.addEventListener('dragenter',(event) => {
+      console.log('dragenter')
+      event.preventDefault();
+    })
+    target.addEventListener('dragover',(event) => {
+      console.log('dragover')
+      event.preventDefault();
+    })
+    target.addEventListener('dragleave',(event) => {
+      console.log('dragleave')
+      event.preventDefault();
+    })
+
+    
+
+    target.addEventListener('drop',(event) => {
+      console.log('drop')
+      event.preventDefault();
+      let drag_id = event.dataTransfer.getData('Text');
+      //console.log(returnObj)
+      target.appendChild(document.getElementById(drag_id))
+      console.log('拖元素离开原位置，来到目标地址');
+    })
+
+
+  </script>
+</body>
+</html>
