@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css布局 Grid</title>
+  <style>
+    .container {
+      /* 启动网格布局，九宫格 */
+      display: grid;
+      justify-content: center;
+      align-content: center; 
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+      /* flex align-items */
+    }
+    .box {
+      background-color: brown;
+    }
+  </style>
+</head>
+<body>
+  <!-- 二维布局 row column-->
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+  </div>
+  <script>
+    const boxes = document.querySelectorAll('.box');
+    let i = 1
+    for (let box of boxes) {
+      //在js中可以操纵一切css 
+      //css ele.style
+      //html document.createElement
+      //驼峰式命名
+      i++;
+      box.style.backgroundColor = `rgba(${i*20},${i*10},${i*5})`
+      // console.log(box.getAttribute('backgroundColor'));
+    }
+  </script>
+</body>
+</html>
