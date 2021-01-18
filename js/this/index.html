@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //对象 this 内存
+    var a = 1;//在内存中分配一个空间  a 1 
+    var obj = { // 内存  -> map空间 字典查
+      foo:5,
+      //特别处理,
+      //内存,把我们的代码通过I/O  文件系统，读取到内存
+      //内存中有个地址，执行 CPU 
+      //func()：函数之中 函数会重新分配一个执行的空间 而且进入执行栈
+      //创建一个作用域 形成一个变量的查找链-> 作用域链 this
+      func: function() {
+        console.log(this.foo);
+      }
+    }
+    var foo = 6;
+    var func = obj.func
+    obj.foo //从 .运算符 对象属性查找一下-> 地址的不断查找
+    func();
+  </script>
+</body>
+</html>
