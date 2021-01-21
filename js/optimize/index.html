@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM 操作测试</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <!-- <script>
+    // http ->file www.taobao.com 
+    // req res 200 html text/html 解析html
+    // 1、尽快吧静态页面显示   img src 
+    // js 阻塞  DOM 树
+   
+    // console.log(oContainer);
+  </script> -->
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    //why 怎么优化？
+    //一万条数据  js阻塞了
+    //1.查找元素 可以把它提出来
+    // document.addEventListener('DOMContentLoaded',() => {
+    //   console.log('DomContentLoaded')
+    //   let oContainer = document.getElementById('container')
+    //   // dom + css 结合完成了
+    // },false);
+    // DOM 树 ready
+    // window.addEventListener('load',() => {
+    //   // 各种资源加载完了 js img src、、、
+    //   console.log('load')
+    // },false)
+    let oContainer = document.getElementById('container')
+    let content = ''
+    for(var count = 0;count < 10000;count++) {
+      content += '<span>我是一个小测试</span>'
+    }
+    oContainer
+      .innerHTML += content;
+  </script>
+</body>
+</html>
