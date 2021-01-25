@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">点击</button>
+  <script>
+  // 0  但是一般有那么十几毫秒 
+  // 不精确
+  // const btn = document.querySelector('.btn');
+  let xhr = new XMLHttpRequest(); // ajax  耗时任务
+  // setTimeout(() => {
+  //   console.log('timeout');
+  // }, 0)
+  // btn.addEventListener('click', () => {
+  //   console.log('btn clicked');
+  // }, false)
+  // // 封装ajax 的请求  回调函数  
+  // function  loadAjaxContent(url, callback) {
+  //   // 0 
+  //   console.log(xhr.readyState, '----1');
+  //   xhr.open('GET', url); // GET 动词 http 三次握手 建立好通信的通道 
+  //   console.log(xhr.readyState, '----2');
+  //   xhr.onreadystatechange = function() {
+  //     console.log(xhr.readyState, '----4');
+  //     // readyState 那几个值？ 
+  //     // 0 未初始化， 含没有调用open 
+  //     // 1 请求建立  还没有发送 
+  //     // 2 请求已发送， 正在处理中  pending   服务器 计算中  
+  //     // 3  请求在处理中， 已有部分数据， 大的数据包  分片   断点续传
+  //     // 4 响应已完成  可以获取并使用服务器的响应了  
+  //     if (xhr.readyState == 4 && xhr.status == 200) {
+  //       callback(JSON.parse(xhr.responseText)); // xhr 时代 ie6 没有发明json 
+  //       // json {login:'ruanyf'}作为数据传输的格式，
+  //       //  比xml 更轻亮 <userInfo><login>ruanyf</login></userInfo>
+  //     }
+  //   }
+  //   xhr.send();
+  //   console.log(xhr.readyState, '----3');
+  // }
+  //更精细化的处理异步问题 顺序执行
+  //阻塞 js node性能很好
+  //异步任务的同步化
+  //异步任务 callback -> promise+then -> generator -> async await
+  //先得到 阮一峰的gitinfo
+  //再得到阮一峰 所有的repo
+  // promise 出现的前夜
+  // loadAjaxContent('https://api.github.com/users/ruanyf', (users) => {
+  //   console.log(users,'users')
+  //    loadAjaxContent('https://api.github.com/users/ruanyf/repos', (repos) => {
+  //       console.log(repos,'users')
+  //       loadAjaxContent('http://api.github.com/search/issues?q=ruanyf',(result) => {
+  //         console.log(result,'results');
+
+  //       })
+  // }); 
+  // }); 
+  
+  // let p1 = new Promise((resolve, reject) => {
+  //   console.log('bbbb'); // promise 函数是立即执行的 
+  //   // 耗时的任务封装在promise 内部
+  //   xhr.open('GET', 'https://api.github.com/users/ruanyf');
+  //   xhr.onreadystatechange = function() {
+  //     if (xhr.readyState == 4 && xhr.status == 200) {
+  //       resolve(JSON.parse(xhr.responseText))
+  //     }
+  //   }
+  //   xhr.send();
+  // })
+  // let p2 = 
+  // new Promise((resolve, reject) => {
+  //   console.log('bbbb'); // promise 函数是立即执行的 
+  //   // 耗时的任务封装在promise 内部
+  //   xhr.open('GET', 'https://api.github.com/users/ruanyf/repos');
+  //   xhr.onreadystatechange = function() {
+  //     if (xhr.readyState == 4 && xhr.status == 200) {
+  //       resolve(JSON.parse(xhr.responseText))
+  //     }
+  //   }
+  //   xhr.send();
+  // })
+
+  // p1
+  //  .then(data => {
+  //   //  console.log('1')
+  //   //  p2
+  //   //   .then(data => {
+  //   //     console.log('2')
+  //   //   })
+  //  })
+
+  fetch('https://api.github.com/users/ruanyf')
+  .then(data => data.json()) //readstream 二进制流 json化 变成json对象 也是要花时间的
+   .then(data => {
+     console.log('user',data)
+    //  console.log('users',data)
+    return fetch('https://api.github.com/users/ruanyf/repos')
+      
+     
+   })
+   .then(data => data.json())
+   .then(data => {
+     console.log('repos',data)
+   })
+   
+  console.log('aaaa');
+  </script>
+</body>
+</html>
