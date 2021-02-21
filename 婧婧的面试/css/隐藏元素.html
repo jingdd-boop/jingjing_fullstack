@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 可以在页面上看到， display: none;元素已经消失了*/
+   .item1 {
+    display: none;
+    /* 不显示对应的元素，在文档布局中不再分配空间（回流+重绘） */
+    } 
+    .item2 {
+      visibility: hidden;
+      /* 隐藏对应元素，在文档布局中仍保留原来的空间（重绘） */
+    }   
+    .item3 {
+      opacity: 0;
+      /* 隐藏对应元素，在文档布局中仍保留原来的空间（重绘） */
+    } 
+  </style>
+</head>
+<body>
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+</body>
+</html>

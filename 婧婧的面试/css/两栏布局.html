@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+    }
+    .left {
+      height: 300px;
+      width: 300px;
+      background-color: thistle;
+    }
+    .right {
+      background-color: tomato;
+      height: 300px;
+      flex: 1;
+      min-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">1</div>
+    <div class="right">hahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhahahahhaahhahahhahaahahhahahhahhaha</div>
+  </div>
+</body>
+</html>
+<!-- 两栏布局，左边固定宽度，右边自适应，用flex：1,要加上min-width:0;
+如果不加，当内容超出会出现问题。 -->
