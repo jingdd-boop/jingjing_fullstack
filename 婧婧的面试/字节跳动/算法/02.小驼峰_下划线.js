@@ -3,6 +3,8 @@ function hump2Underline(s) {
   return s.replace(/([A-Z])/g, '_$1').toLowerCase()
 }
 
+//匹配大写字母 /[A-Z]/g,'_$1'
+
 // JSON对象的key值转换为下划线格式
 function jsonToUnderline(obj) {
   if (obj instanceof Array) {
