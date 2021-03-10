@@ -16,6 +16,8 @@ Array.prototype.filter1 = function(callback,thisArg) {
   for (let i = 0;i<len;i++) {
     if(i in O) {
       if(callback.call(thisArg,O[i],i,O)) {
+        //array.filter(function(currentValue,index,arr), thisValue)
+        //回调函数带的参数 O[i],i,O
         res.push(O[i]);
       }
     }
