@@ -1,10 +1,9 @@
-function debounce(fn,wait) {
+function debounce(fn, wait) {
   var timeout = null;
-  return function() {
-    if(timeout !== null) 
-      clearTimeout(timeout)
-    timeout = setTimeout(fn,wait)
-  }
+  return function () {
+    if (timeout !== null) clearTimeout(timeout);
+    timeout = setTimeout(fn, wait);
+  };
 }
 
 //处理函数
@@ -13,4 +12,4 @@ function handle() {
 }
 
 //滚动事件
-window.addEventListener('scroll',debounce(handle,100))
+window.addEventListener("scroll", debounce(handle, 100));

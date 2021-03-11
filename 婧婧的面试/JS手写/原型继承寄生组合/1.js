@@ -1,10 +1,10 @@
 function Preson() {
-  this.name = 'jing'
+  this.name = "jing";
 }
 
 function child() {
   Preson.call(this);
-  this.type = 'chl'
+  this.type = "chl";
 }
 
 child.prototype = Object.create(Preson.prototype);
