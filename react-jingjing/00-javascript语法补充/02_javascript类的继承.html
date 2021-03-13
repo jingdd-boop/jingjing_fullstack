@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 面向对象的三大特性
+    //封装，继承，多态
+    //继承，减少重复的代码 多态：
+
+    class Person {
+      constructor(name,age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      running() {
+        console.log("running")
+      }
+    }
+
+
+    class P extends Person {
+      constructor(name,age,sno) {
+        super(name,age);
+        this.sno = sno;
+      }
+    }
+
+    const p = new P("why",10,110)
+    console.log(stu.name,stu.age,stu.sno)
+    stu.running()
+  </script>
+</body>
+</html>

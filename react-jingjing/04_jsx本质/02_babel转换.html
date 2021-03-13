@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+ 
+  <script type="text/babel">
+
+    class App extends React.Component{
+    constructor() {
+      super();
+    }
+     render() {
+      
+    /*#__PURE__*/
+   var ReactElement =  React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "head1"
+    }, /*#__PURE__*/React.createElement("h1", null, "\u6211\u662F\u6807\u98981")), /*#__PURE__*/React.createElement("div", {
+      className: "head1"
+    }, /*#__PURE__*/React.createElement("h2", null, "\u6211\u662F\u6807\u98982")), /*#__PURE__*/React.createElement("div", {
+      className: "head3"
+    }, /*#__PURE__*/React.createElement("h3", null, "\u6211\u662F\u6807\u98981")));
+    console.log(ReactElement)
+    return ReactElement
+     }
+     
+
+    
+    }
+    
+    ReactDOM.render(
+      <App/>,
+      document.getElementById("app")
+    )
+  
+  </script>
+</body>
+</html>
