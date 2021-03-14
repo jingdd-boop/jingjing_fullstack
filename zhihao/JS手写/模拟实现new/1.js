@@ -2,8 +2,8 @@ function newFun(func, ...args) {
   if (typeof func !== "function") {
     throw new TypeError("is no function");
   }
-
-  const obj = Object.create(func.propotype);
+  let obj = new Object();
+  obj.__proto__ = Object.create(func.propotype);
   const res = func.apply(obj, args);
 
   const isObject = typeof res === "object" && res !== null;

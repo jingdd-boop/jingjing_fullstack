@@ -12,8 +12,6 @@ Array.prototype.reduce1 = function (callback, initialValue) {
   const len = O.length >>> 0;
 
   let accumulator = initialValue;
-
-  值;
   let i = 0;
 
   //分情况

@@ -1,8 +1,5 @@
 Function.prototype.applyFun = function (context, args) {
   context = context || window;
-  if (typeof this !== "function") {
-    throw new TypeError("error");
-  }
   let fn = Symbol("fn");
   context[fn] = this;
   let res = context[fn](...args);

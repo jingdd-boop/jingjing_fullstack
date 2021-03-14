@@ -16,6 +16,8 @@ Array.prototype.foreach1 = function (callback, thisArg) {
   }
 };
 
+
+
 var arr = [1, 2, 3, 4, 5];
 
 arr.foreach1(function (item) {
