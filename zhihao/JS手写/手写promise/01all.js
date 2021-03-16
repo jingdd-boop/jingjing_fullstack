@@ -1,13 +1,13 @@
-Promise.myall = function(promisearr) {
-  return new Promise((resolve,reject) => {
-    let ans = [];
+Promise.myall = function(promiseArr) {
+  return new Promise((resolve, reject) => {
+    const ans = [];
     let index = 0;
-    for (let i = 0;i < promisearr.length;i++) {
-      promisearr[i]
+    for (let i = 0; i < promiseArr.length; i++) {
+      promiseArr[i]
       .then(res => {
         ans[i] = res;
         index++;
-        if(index = promisearr.length) {
+        if (index === promiseArr.length) {
           resolve(ans);
         }
       })

@@ -1,4 +1,5 @@
 # http0.9
+最传统的request-response模式
 - 不支持请求头 只支持get
 
 # http1.0
@@ -35,6 +36,7 @@ cache-control
 
 # http2.0
 
-- 二进制协议
-- 可以在tcp连接中并发请求多个http请求
+- 二进制协议，增加了传输数据的效率
+- 可以在tcp连接中并发请求多个http请求，移除了http/1.1的串行请求
 - 压缩头
+- 允许服务器端在客户端放cache
