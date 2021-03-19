@@ -5,12 +5,10 @@ Array.prototype.reduce = function(callbackFn,initialValue) {
   if (typeof callback !== "function") {
     throw new TypeError("this is not a function");
   }
-
   let O = Object(this);
   let len = O.length >>> 0;
   let i = 0
   let acc = initialValue;//reduce方法的第二个参数作为累加器的初始值
-
   if(acc === undefined) {
     // throw new Error('Each element of the array is empty');
       // 初始值不传的处理

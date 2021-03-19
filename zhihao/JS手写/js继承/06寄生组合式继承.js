@@ -3,7 +3,6 @@ function clone(parent,child) {
   child.prototype = Object.create(parent.prototype);
   child.prototype.constructor = child;
 }
-
 function Parent6() {
   this.name = 'parent6';
   this.play = [1, 2, 3];
@@ -15,7 +14,6 @@ function Child6() {
   Parent6.call(this);
   this.friends = 'child5';
 }
-
 clone(Parent6, Child6);
 
 Child6.prototype.getFriends = function () {
