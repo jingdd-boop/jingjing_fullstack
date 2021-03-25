@@ -1,21 +1,20 @@
-//首先是class 里面有一个构造函数
 class myEvent {
   constructor() {
     this.eventMap = {}
   }
 
-  //订阅 写
   on(type,hander) {
-    if(!typeof hander === 'function') {
-      throw new Error('')
+    //hander 是一个函数
+    if(typeof hander !== 'function') {
+      throw console.error('cuo');
     }
-    if(!this.eventMap[type]) {
-      this.eventMap[type] = [];
+    if(!this.eventMap[type]){
+      this.eventMap[type] = []
     } else {
-      this.eventMap[type].push(hander)
+      this.eventMap[type].push(hander);
     }
   }
-  //读 发布
+
   emit(type,parma) {
     if(this.eventMap[type]) {
       this.eventMap[type].forEach((hander) => {
@@ -23,16 +22,16 @@ class myEvent {
       })
     }
   }
-  //关闭
+
   off(type, hander) {
     if(this.eventMap[type]) {
-      this.eventMap[type].splice(this.eventMap[type].indexof(hander) >>> 1,1)
+      this.eventMap.splice(this.eventMap[type].indexOf(hander) >>> 1,1)
     }
   }
 }
 
-
 const event1 = new myEvent();
+console.log(event1)
 
 const hander = function(parma) {
   console.log(`事件被触发，接入的参数是${parma}`)
@@ -40,7 +39,3 @@ const hander = function(parma) {
 
 console.log(event1.on("text",hander));
 console.log(event1.emit("text","newstate"));
-
-
-
-

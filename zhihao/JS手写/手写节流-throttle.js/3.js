@@ -1,4 +1,4 @@
-const  throttle = (fn,time) => {
+function jlFunc(fn,timeout) {
   let flag = true;
   return function() {
     if(!flag) return ;
@@ -6,6 +6,6 @@ const  throttle = (fn,time) => {
     setTimeout(() => {
       fn.apply(this.arguments);
       flag = true;
-    },time)
+    },timeout)
   }
 }
