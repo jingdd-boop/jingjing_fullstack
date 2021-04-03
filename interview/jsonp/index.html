@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    fetch('https://photo.sina.cn/aj/index?page=1&cate=recommend')
+    .then((res) => {
+      console.log(res)
+    })
+  </script> -->
+  <!-- js在运行时存在一个沙箱 -->
+  <!-- src href img -->
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  
+  <!-- text/js js文件执行的-->
+  <script src="a.js"></script>
+  <script>
+    function callbackf(data) {
+      console.log(data);//then
+      //因为包裹了一个函数，所以传过来的json数据可以直接运行
+      
+    }
+  </script>
+  <script src="https://photo.sina.cn/aj/index?page=1&cate=recommend&callback=callbackf"></script>
+ <!-- 不加callback的话就是同源使用 如果一个第三方 加上callback 
+  在请求的数据之外，还包了一层 callback(data)
+
+ -->
+</body>
+</html>
