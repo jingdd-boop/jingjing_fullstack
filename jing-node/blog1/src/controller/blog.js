@@ -1,58 +1,69 @@
+const {exec} = require('../db/mysql')
+
 const getList = (author,keyword) => {
-  //先返回假数据
-  return [
-    {
-      id:1,
-      title:"标题",
-      content:"内容",
-      createTime:156876398611324,
-      author:'jingda'
-    },
-    {
-      id:2,
-      title:"标题b",
-      content:"内容b",
-      createTime:1568781934847814,
-      author:'jingda'
-    }
-  ]
+  // 1==1 占一个位置 防止author 和keyword没有值 
+  let sql = `select * from blogs where 1=1 `
+  if (author) {
+    sql += `and author='${author}' `
+  }
+  if (keyword) {
+    sql += `and title like '%${keyword}%' `
+  }
+  //返回的是一个promise
+  return exec(sql);
 }
-
-
 const getDetail = (id) => {
-  //先返回假数据
-  return [
-    {
-      id:1,
-      title:"标题",
-      content:"内容",
-      createTime:156876398611324,
-      author:'jingda'
-    },
-    {
-      id:2,
-      title:"标题b",
-      content:"内容b",
-      createTime:1568781934847814,
-      author:'jingda'
-    }
-  ]
+  const sql = `select * from blogs where id='${id}'`
+  return exec(sql).then(rows => {
+    return rows[0]
+  })
 }
 
 const newBlog = (blogData = {}) => {
-  //blogData 是一个博客对象，包含 title content属性
-  console.log('newBlog blogData...',blogData)
-  return {
-    id:3 //表示新建博客，插入到数据表里面的 id
-  }
+  //blogData 是一个博客对象，包含 title content author属性
+  // console.log('newBlog blogData...',blogData)
+  const title = blogData.title
+  const content = blogData.content
+  const author = blogData.author
+  const createTime = Date.now
+  const sql = `
+    insert into blog {title,content,create,createtime,author}
+    values ('${title}','${content}',${createTime},'${author}');
+  `
+  return exec(sql).then(insertData => {
+    console.log(insertData)
+    return {
+      id:insertData.insertId
+    }
+  })
 }
-
 const updateBlog = (id,blogData = {}) => {
-  return true
+  //id就是要更博客的id
+  //blogData 是一个博客对象 包含title content 属性
+  const title = blogData.title
+  const content = blogData.content
+  const sql = `
+  update blogs set title='${title}',content='${content} where id='${id}' '
+  `
+  return exec(sql).then(updateData => {
+    console.log('updateData',updateData)
+    if(updateData.affectedRow > 0) {
+      return true
+    }
+    return false
+  })
 }
 
-const delBlog = (id) => {
-  return true
+const delBlog = (id,author) => {
+  const sql = `delete from blogs where id = '${id}' and author = '${author}';`
+  return exec(sql).then(delData => {
+    console.log('updateData',delData)
+    if(deleData.affectedRow > 0) {
+      return true
+    }
+    return false
+  })
+  
 }
 
 module.exports = {
