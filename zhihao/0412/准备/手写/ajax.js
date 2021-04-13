@@ -1,7 +1,7 @@
 function myAjax(url) {
   return new Promise((resolve,reject) => {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET','');
+    xhr.open('GET',url);
     xhr.onreadystatechange(() => {
       if(xhr.readyState !== 4) {
         reject();
@@ -13,10 +13,19 @@ function myAjax(url) {
         reject();
       }
     });
-    xhr.setRequestHeader();
+    xhr.responseType = "json"
+    xhr.setRequestHeader("Accept","application/json");
     xhr.send()
   })
 }
+myAjax(url).then(function(json) {
+  console.log(json);
+},function(error) {
+  console.error(error)
+})
 
-var url = 'http://www.baidu.com'
-myAjax(url);
+
+// 创建XMLHttpRequest对象。
+// 设置请求方式。
+// 调用回调函数。
+// 发送请求。

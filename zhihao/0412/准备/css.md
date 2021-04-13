@@ -104,8 +104,34 @@ box-sizing:content-box的时候，边框和padding不包含在元素的宽高之
 
 
 # 选择器
+从0开始
+行内样式1000
+id 100
+属性，class 伪类 10
+元素选择器 伪元素 1
+通配符 0
 
 # 伪类 伪元素
+伪类和伪元素都不会出现在文档树中
+伪类允许出现在选择器的任何位置
+伪元素只能跟在选择器最后面
+
+
+伪类的操作对象是文档树中已有的元素，
+而伪元素则创建了一个文档数外的元素。因此，伪类与伪元素的区别在于：有没有创建一个文档树之外的元素。
+
+伪类：link，hover active 
+first-of-type。。
+nth-child
+
+伪元素：after 
+
+
+# 块级元素 行内元素
+块级元素：h1-h6,p,hr,ul,div
+行内元素：i，em，b，u
+行内块级元素：span，a，img，button，input
+padding可以设置 margin只能够设置水平方向的边距，即：margin-left和margin-right，设置margin-top和margin-bottom无效
 
 # position
 ## static 
@@ -127,7 +153,33 @@ box-sizing:content-box的时候，边框和padding不包含在元素的宽高之
 ## sticky
 相对位置和固定位置的混合体
 # float
+浮动元素的高度自适应，父元素在不写高度的时候，子元素如果泄露浮动，父元素会发生高度塌陷
+解决方法：
+- 添加空div 在浮动元素下发添加空div，并给该元素写css样式
+{
+  clear：both;
+  heigth：0;
+  overflow:hidden;
+}
+- 给浮动的父级元素加高度
+- 给父级元素加overflow：hidden 触发bfc
+- after伪类
+float_div:after {
+  content:"."
+  clear:both
+  height:0
+  display:block
+  overflow:hidden
+}
 # bfc
+一个独立的渲染区域，或者说是一个隔离的独立容器
+形成BFC的条件：
+- 浮动元素 float 除了none
+- 定位 position（absolute。fixed）
+- overflow 除了visible
+- body
+
+
 # 层叠
 # 布局
 ## 水平居中
@@ -136,3 +188,8 @@ box-sizing:content-box的时候，边框和padding不包含在元素的宽高之
 ## 双飞翼
 ## 圣杯布局
 # display:none visibility:hidden的区别
+visibility:hidden会隐藏元素，但是其位置还存在页面的文档流中，不会被删除，所以会触发浏览器的重绘
+
+display:none，其位置不会被保留，回流和重绘
+
+opacity：0 还在页面文档流中，会触发重绘
